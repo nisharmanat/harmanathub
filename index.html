@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Harmanat Singh</title>
-<meta name="description" content="Links to the SM Amar Singh family tree and the Grey Bulls cricket club.">
+<meta name="description" content="Links to the SM Amar Singh family tree, the Grey Bulls cricket club and Mehram Industries.">
 <meta name="theme-color" content="#16181b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316181b'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23c9a24a'%3EHS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@600&text=%E0%A8%AE%E0%A8%B9%E0%A8%BF%E0%A8%B0&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #16181b;
@@ -20,6 +21,7 @@
     --gold: #c9a24a;
     --gold-soft: rgba(201,162,74,.14);
     --sage: #7fa58c;
+    --mehram: #1e3fae;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -35,8 +37,8 @@
     -webkit-font-smoothing: antialiased;
   }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  main { flex: 1; width: 100%; max-width: 940px; margin: 0 auto; padding: 64px 20px 72px; display: flex; align-items: center; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
+  main { flex: 1; width: 100%; max-width: 1180px; margin: 0 auto; padding: 64px 20px 72px; display: flex; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
   .card {
     display: flex; flex-direction: column;
     background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
@@ -48,6 +50,14 @@
   .card:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
   .thumb { aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: #0f1113; }
   .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease, filter .8s ease; }
+  .thumb.mehram {
+    background:
+      linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px) 0 0 / 22px 22px,
+      linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px) 0 0 / 22px 22px,
+      radial-gradient(90% 80% at 50% 30%, #2a4cc0, var(--mehram) 55%, #132a78);
+  }
+  .thumb.mehram svg { display: block; width: 100%; height: 100%; transition: transform .8s ease; }
+  .card:hover .thumb.mehram svg { transform: scale(1.04); }
   .thumb.family img { object-position: center 0%; filter: sepia(.18) contrast(1.02); }
   .card:hover .thumb img { transform: scale(1.04); }
   .thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,24,27,0) 55%, rgba(22,24,27,.55)); }
@@ -63,7 +73,7 @@
   .body h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.01em; }
   .body p { color: var(--muted); font-size: .97rem; }
   .go { margin-top: auto; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .url { font-size: .86rem; color: var(--muted); }
+  .url { font-size: .86rem; color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .btn {
     display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
     font-size: .86rem; font-weight: 600; color: #16181b;
@@ -73,13 +83,19 @@
   .card:hover .btn { gap: 10px; background: #d8b45e; }
   .credit { position: fixed; right: 16px; bottom: 12px; font-size: .78rem; color: var(--muted); }
   .credit b { font-weight: 600; color: var(--gold); }
+  @media (max-width: 1000px) {
+    main { max-width: 940px; }
+    .grid { grid-template-columns: 1fr 1fr; }
+    .grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 12px); }
+  }
   @media (max-width: 700px) {
     main { padding-top: 28px; padding-bottom: 24px; align-items: flex-start; }
     .grid { grid-template-columns: 1fr; gap: 20px; }
+    .grid > .card:last-child:nth-child(odd) { width: 100%; }
     .credit { position: static; text-align: right; padding: 0 16px 16px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .card, .thumb img, .btn { transition: none; }
+    .card, .thumb img, .thumb svg, .btn { transition: none; }
     .card:hover { transform: none; }
   }
 </style>
@@ -109,6 +125,36 @@
         <h2>Grey Bulls</h2>
         <p>Our T20 cricket club: the squad, the silverware and the photo gallery.</p>
         <div class="go"><span class="url">greybulls.com</span><span class="btn">Visit <span aria-hidden="true">&rarr;</span></span></div>
+      </div>
+    </a>
+
+    <a class="card" href="/mehramindustries/">
+      <div class="thumb mehram">
+        <svg viewBox="0 0 400 250" role="img" aria-label="Mehram wordmark above a line drawing of a bicycle bottom bracket axle">
+          <text x="200" y="80" text-anchor="middle" fill="#fff" font-family="'Noto Sans Gurmukhi', 'Mukta Mahee', 'Raavi', sans-serif" font-weight="600" font-size="50">ਮਹਿਰਮ</text>
+          <text x="200" y="106" text-anchor="middle" fill="rgba(255,255,255,.72)" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="10" letter-spacing="3.2">MEHRAM · LUDHIANA · SINCE 1976</text>
+          <g transform="translate(50 122)" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+            <line x1="-10" y1="40" x2="310" y2="40" stroke="#c9a24a" stroke-width="1" stroke-dasharray="10 4 2 4" opacity=".85"/>
+            <path d="M24 34 L46 32 H254 L276 34 V46 L254 48 H46 L24 46 Z"/>
+            <path d="M24 34 V46 M276 34 V46" opacity=".5"/>
+            <path d="M74 32 L84 22 H98 L106 32 M74 48 L84 58 H98 L106 48"/>
+            <path d="M194 32 L202 22 H216 L226 32 M194 48 L202 58 H216 L226 48"/>
+            <path d="M120 10 H66 L58 18 V62 L66 70 H120" opacity=".9"/>
+            <path d="M180 10 H234 L242 18 V62 L234 70 H180" opacity=".9"/>
+            <g stroke-width="1.3" opacity=".85">
+              <circle cx="85" cy="16" r="3.4"/><circle cx="93" cy="16" r="3.4"/><circle cx="101" cy="16" r="3.4"/>
+              <circle cx="85" cy="64" r="3.4"/><circle cx="93" cy="64" r="3.4"/><circle cx="101" cy="64" r="3.4"/>
+              <circle cx="203" cy="16" r="3.4"/><circle cx="211" cy="16" r="3.4"/><circle cx="219" cy="16" r="3.4"/>
+              <circle cx="203" cy="64" r="3.4"/><circle cx="211" cy="64" r="3.4"/><circle cx="219" cy="64" r="3.4"/>
+            </g>
+          </g>
+        </svg>
+        <span class="tag">Business</span>
+      </div>
+      <div class="body">
+        <h2>Mehram Industries</h2>
+        <p>Our family business in Ludhiana: bicycle bottom bracket parts and hose fittings since 1976.</p>
+        <div class="go"><span class="url">harmanat.com/mehramindustries</span><span class="btn">Visit <span aria-hidden="true">&rarr;</span></span></div>
       </div>
     </a>
   </div>
