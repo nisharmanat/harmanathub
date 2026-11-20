@@ -1,164 +1,284 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harmanat Singh</title>
-<meta name="description" content="Links to the SM Amar Singh family tree, the Grey Bulls cricket club and Mehram Industries.">
-<meta name="theme-color" content="#16181b">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316181b'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23c9a24a'%3EHS%3C/text%3E%3C/svg%3E">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harmanat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@600&text=%E0%A8%AE%E0%A8%B9%E0%A8%BF%E0%A8%B0&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #16181b;
-    --card: #202327;
-    --line: rgba(255,255,255,.07);
-    --ink: #ece8e1;
-    --muted: #a19c93;
-    --gold: #c9a24a;
-    --gold-soft: rgba(201,162,74,.14);
-    --sage: #7fa58c;
-    --mehram: #1e3fae;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background:
-      radial-gradient(70% 50% at 50% 0%, rgba(201,162,74,.08), rgba(201,162,74,0) 70%),
-      var(--bg);
-    color: var(--ink);
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.55;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    -webkit-font-smoothing: antialiased;
-  }
-  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  main { flex: 1; width: 100%; max-width: 1180px; margin: 0 auto; padding: 64px 20px 72px; display: flex; align-items: center; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
-  .card {
-    display: flex; flex-direction: column;
-    background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
-    color: inherit; text-decoration: none;
-    box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 18px 48px rgba(0,0,0,.35);
-    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-  }
-  .card:hover { transform: translateY(-5px); border-color: rgba(201,162,74,.45); box-shadow: 0 2px 4px rgba(0,0,0,.45), 0 26px 64px rgba(0,0,0,.5); }
-  .card:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-  .thumb { aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: #0f1113; }
-  .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease, filter .8s ease; }
-  .thumb.mehram {
-    background:
-      linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px) 0 0 / 22px 22px,
-      linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px) 0 0 / 22px 22px,
-      radial-gradient(90% 80% at 50% 30%, #2a4cc0, var(--mehram) 55%, #132a78);
-  }
-  .thumb.mehram svg { display: block; width: 100%; height: 100%; transition: transform .8s ease; }
-  .card:hover .thumb.mehram svg { transform: scale(1.04); }
-  .thumb.family img { object-position: center 0%; filter: sepia(.18) contrast(1.02); }
-  .card:hover .thumb img { transform: scale(1.04); }
-  .thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,24,27,0) 55%, rgba(22,24,27,.55)); }
-  .tag {
-    position: absolute; left: 16px; bottom: 14px; z-index: 1;
-    font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-    padding: 5px 11px; border-radius: 999px;
-    color: var(--gold); background: rgba(22,24,27,.72);
-    border: 1px solid rgba(201,162,74,.35);
-    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-  }
-  .body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-  .body h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.01em; }
-  .body p { color: var(--muted); font-size: .97rem; }
-  .go { margin-top: auto; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .url { font-size: .86rem; color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
-    font-size: .86rem; font-weight: 600; color: #16181b;
-    background: var(--gold); padding: 8px 15px; border-radius: 999px;
-    transition: gap .25s ease, background .25s ease;
-  }
-  .card:hover .btn { gap: 10px; background: #d8b45e; }
-  .credit { position: fixed; right: 16px; bottom: 12px; font-size: .78rem; color: var(--muted); }
-  .credit b { font-weight: 600; color: var(--gold); }
-  @media (max-width: 1000px) {
-    main { max-width: 940px; }
-    .grid { grid-template-columns: 1fr 1fr; }
-    .grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 12px); }
-  }
-  @media (max-width: 700px) {
-    main { padding-top: 28px; padding-bottom: 24px; align-items: flex-start; }
-    .grid { grid-template-columns: 1fr; gap: 20px; }
-    .grid > .card:last-child:nth-child(odd) { width: 100%; }
-    .credit { position: static; text-align: right; padding: 0 16px 16px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .card, .thumb img, .thumb svg, .btn { transition: none; }
-    .card:hover { transform: none; }
-  }
+:root{
+  --paper:#ecebe8; --paper-2:#f7f6f3; --ink:#1d1c1a; --soft:#6f6c66;
+  --gold:#c9a23f; --gold-2:#e7c766; --kesri:#e0841c; --red:#a8262c;
+  --outline:"Fredericka the Great", Georgia, serif;
+  --type:"Special Elite", "Courier New", monospace;
+  --hand:"Homemade Apple", "Segoe Script", cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--paper:#2a2927;--paper-2:#34322f;--ink:#f1eee8;--soft:#b5b0a7;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#2a2927;--paper-2:#34322f;--ink:#f1eee8;--soft:#b5b0a7;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{overflow-x:hidden;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--paper); color:var(--ink); font-family:var(--type);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  overflow-x:hidden;
+}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;position:relative}
+
+/* little helpers */
+.hand{font-family:var(--hand);font-size:1.05rem;line-height:1.9}
+.btn{display:inline-block;font-family:var(--type);font-size:.78rem;letter-spacing:.08em;text-decoration:none;
+  border:1.5px solid var(--ink);border-radius:4px;padding:.65em 1.8em;background:var(--paper-2);color:var(--ink);
+  box-shadow:1px 2px 0 rgba(0,0,0,.08);transition:transform .15s}
+.btn:hover{transform:rotate(-2deg)}
+.btn:focus-visible{outline:2px dashed var(--kesri);outline-offset:4px}
+.star{position:absolute;width:46px;height:46px}
+.cut{filter:drop-shadow(2px 3px 0 rgba(0,0,0,.12))}
+
+/* hero */
+.hero{min-height:700px;padding-top:70px;position:relative}
+.hello{font-family:var(--outline);font-weight:400;font-size:clamp(3rem,8vw,6rem);line-height:1;margin:0;max-width:7ch;position:relative;z-index:2}
+.smiley{width:70px;position:absolute;left:min(48vw,440px);top:80px}
+.plane{position:absolute;right:70px;top:330px;width:min(620px,70vw);z-index:1}
+.note{position:absolute;right:20px;top:40px;max-width:240px;text-align:center;z-index:3}
+.note p{font-size:.78rem;line-height:1.6;margin:.2em 0 1em}
+.megaphone{position:absolute;right:-20px;top:330px;width:110px;transform:rotate(8deg)}
+.hero-sub{position:absolute;left:24px;bottom:70px;max-width:330px;z-index:3}
+.hero-sub p{font-size:.85rem;line-height:1.7;margin:.4em 0 0}
+
+/* torn paper */
+.torn{display:block;width:100%;height:60px;margin-bottom:-2px}
+.sheet{background:var(--paper-2);position:relative}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding-top:60px;padding-bottom:90px}
+.about h2{font-family:var(--outline);font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);margin:0 0 .4em}
+.about p{font-size:1rem;line-height:1.8;max-width:52ch}
+.polaroid{background:#fff;padding:14px 14px 56px;transform:rotate(3deg);box-shadow:2px 6px 14px rgba(0,0,0,.15);position:relative;max-width:340px;justify-self:center;width:100%}
+.polaroid .ph{aspect-ratio:3/4;width:100%;object-fit:cover;display:block;background:#d9d5cd}
+.me-sticker{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 35%;border:6px solid #fff;box-shadow:2px 4px 0 rgba(0,0,0,.12);transform:rotate(-6deg);display:block;margin:0 auto 6px}
+.wander{padding-top:10px;padding-bottom:80px;position:relative}
+.wander figure{margin:0 auto;max-width:900px;transform:rotate(-1.2deg);position:relative}
+.wander img{width:100%;display:block;filter:saturate(.9);clip-path:polygon(0 3%,4% 0,10% 2%,18% 0,27% 3%,35% 1%,44% 3%,52% 0,61% 2%,70% 0,79% 3%,88% 1%,96% 3%,100% 0,100% 97%,95% 100%,86% 98%,77% 100%,68% 97%,59% 100%,50% 98%,41% 100%,32% 97%,23% 100%,14% 98%,6% 100%,0 97%);box-shadow:none}
+.wander .tag{position:absolute;right:6%;bottom:-26px;background:var(--paper-2);padding:6px 18px;transform:rotate(3deg);font-family:var(--hand);font-size:1rem;box-shadow:1px 3px 6px rgba(0,0,0,.1)}
+.wander .lead{text-align:center;margin-bottom:26px}
+.polaroid .cap{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:var(--hand);font-size:.9rem;color:#333}
+.tape{position:absolute;top:-14px;left:50%;width:110px;height:30px;background:rgba(231,199,102,.55);transform:translateX(-50%) rotate(-4deg)}
+
+/* projects */
+.made{padding-top:40px;padding-bottom:90px;text-align:center;position:relative}
+.made .hand{font-size:1.4rem}
+.items{display:grid;grid-template-columns:repeat(2,1fr);max-width:760px;margin-left:auto;margin-right:auto;gap:40px;margin-top:40px}
+.item svg{height:170px;width:auto;display:block;margin:0 auto 18px}
+.item h3{font-family:var(--type);font-weight:400;font-size:.92rem;letter-spacing:.06em;line-height:1.5;margin:0 auto 18px;max-width:22ch}
+
+/* cricket + work */
+.weekend{display:grid;grid-template-columns:1fr 1fr;gap:50px;padding-top:20px;padding-bottom:100px}
+.scrap{position:relative;padding:40px 30px 36px;text-align:center}
+.scrap.grey{background:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 2px,transparent 2px 5px),#dcd9d3;transform:rotate(-1.5deg)}
+.scrap.white{background:#fff;transform:rotate(1.2deg);box-shadow:2px 6px 14px rgba(0,0,0,.08)}
+:root[data-theme="dark"] .scrap.white{background:#3c3a36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .scrap.white{background:#3c3a36}:root:not([data-theme="light"]) .scrap.grey{background:#45423d}}
+.scrap svg{height:150px;width:auto}
+.scrap h3{font-family:var(--outline);font-weight:400;font-size:2.2rem;margin:.2em 0 .1em}
+.scrap p{font-size:.85rem;line-height:1.6;margin:0 auto 20px;max-width:30ch}
+
+/* footer */
+footer{padding-top:30px;padding-bottom:40px;text-align:center;position:relative}
+footer h2{font-family:var(--outline);font-weight:400;font-size:3rem;margin:0 0 20px}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.credit{text-align:right;font-size:.75rem;color:var(--soft);margin-top:60px}
+
+@media (max-width:760px){
+  .me-sticker{width:120px;height:120px}
+  .hero-star{display:none}
+  .hero{min-height:0;padding-bottom:40px}
+  .hero-sub{position:relative;left:auto;bottom:auto;margin-top:30px}
+  .plane{position:relative;top:auto;right:auto;width:100%;margin:24px 0 0;display:block}
+  .note{position:relative;right:auto;top:auto;margin:30px auto 0}
+  .megaphone{display:none}
+  .smiley{left:auto;right:30px;top:180px;width:56px}
+  .hero-sub{bottom:30px}
+  .about,.weekend{grid-template-columns:1fr}
+  .items{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
 </style>
 </head>
 <body>
-<h1 class="sr-only">Harmanat Singh</h1>
-<main>
-  <div class="grid">
-    <a class="card" href="/sm-amarsingh/">
-      <div class="thumb family">
-        <img src="assets/family.jpg" alt="Family elders seated together for a portrait">
-        <span class="tag">Family</span>
-      </div>
-      <div class="body">
-        <h2>SM Amar Singh Family Tree</h2>
-        <p>Our family tree: generations, branches and the people who connect us.</p>
-        <div class="go"><span class="url">harmanat.com/sm-amarsingh</span><span class="btn">Visit <span aria-hidden="true">&rarr;</span></span></div>
-      </div>
-    </a>
 
-    <a class="card" href="https://greybulls.com">
-      <div class="thumb">
-        <img src="assets/greybulls.jpg" alt="Grey Bulls squad with the league trophy">
-        <span class="tag">Cricket</span>
-      </div>
-      <div class="body">
-        <h2>Grey Bulls</h2>
-        <p>Our T20 cricket club: the squad, the silverware and the photo gallery.</p>
-        <div class="go"><span class="url">greybulls.com</span><span class="btn">Visit <span aria-hidden="true">&rarr;</span></span></div>
-      </div>
-    </a>
+<!-- shared halftone + glitter defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"/><circle cx="2.5" cy="2.5" r="1.6" fill="#1d1c1a"/></pattern>
+    <pattern id="dotsLight" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#fff"/><circle cx="2.5" cy="2.5" r="1" fill="#1d1c1a"/></pattern>
+    <filter id="glitter"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" result="t"/><feColorMatrix in="t" values="0 0 0 0 .95 0 0 0 0 .8 0 0 0 0 .35 0 0 0 1.4 -.4" result="s"/><feComposite in="s" in2="SourceGraphic" operator="in" result="sp"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="sp"/></feMerge></filter>
+    <symbol id="starShape" viewBox="0 0 100 100"><path d="M50 4l13 30 33 3-25 22 8 33-29-18-29 18 8-33L4 37l33-3z" fill="#c9a23f" filter="url(#glitter)"/></symbol>
+  </defs>
+</svg>
 
-    <a class="card" href="/mehramindustries/">
-      <div class="thumb mehram">
-        <svg viewBox="0 0 400 250" role="img" aria-label="Mehram wordmark above a line drawing of a bicycle bottom bracket axle">
-          <text x="200" y="80" text-anchor="middle" fill="#fff" font-family="'Noto Sans Gurmukhi', 'Mukta Mahee', 'Raavi', sans-serif" font-weight="600" font-size="50">ਮਹਿਰਮ</text>
-          <text x="200" y="106" text-anchor="middle" fill="rgba(255,255,255,.72)" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="10" letter-spacing="3.2">MEHRAM · LUDHIANA · SINCE 1976</text>
-          <g transform="translate(50 122)" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
-            <line x1="-10" y1="40" x2="310" y2="40" stroke="#c9a24a" stroke-width="1" stroke-dasharray="10 4 2 4" opacity=".85"/>
-            <path d="M24 34 L46 32 H254 L276 34 V46 L254 48 H46 L24 46 Z"/>
-            <path d="M24 34 V46 M276 34 V46" opacity=".5"/>
-            <path d="M74 32 L84 22 H98 L106 32 M74 48 L84 58 H98 L106 48"/>
-            <path d="M194 32 L202 22 H216 L226 32 M194 48 L202 58 H216 L226 48"/>
-            <path d="M120 10 H66 L58 18 V62 L66 70 H120" opacity=".9"/>
-            <path d="M180 10 H234 L242 18 V62 L234 70 H180" opacity=".9"/>
-            <g stroke-width="1.3" opacity=".85">
-              <circle cx="85" cy="16" r="3.4"/><circle cx="93" cy="16" r="3.4"/><circle cx="101" cy="16" r="3.4"/>
-              <circle cx="85" cy="64" r="3.4"/><circle cx="93" cy="64" r="3.4"/><circle cx="101" cy="64" r="3.4"/>
-              <circle cx="203" cy="16" r="3.4"/><circle cx="211" cy="16" r="3.4"/><circle cx="219" cy="16" r="3.4"/>
-              <circle cx="203" cy="64" r="3.4"/><circle cx="211" cy="64" r="3.4"/><circle cx="219" cy="64" r="3.4"/>
-            </g>
-          </g>
-        </svg>
-        <span class="tag">Business</span>
-      </div>
-      <div class="body">
-        <h2>Mehram Industries</h2>
-        <p>Our family business in Ludhiana: bicycle bottom bracket parts and hose fittings since 1976.</p>
-        <div class="go"><span class="url">harmanat.com/mehramindustries</span><span class="btn">Visit <span aria-hidden="true">&rarr;</span></span></div>
-      </div>
-    </a>
+<header class="wrap hero">
+  <svg class="star" style="left:-10px;top:150px" viewBox="0 0 100 100" aria-hidden="true"><use href="#starShape"/></svg>
+  <h1 class="hello">Hello and welcome.</h1>
+
+  <svg class="smiley" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#f4cf3a" stroke="#e3b923" stroke-width="3"/><ellipse cx="36" cy="40" rx="5" ry="9" fill="#1d1c1a"/><ellipse cx="64" cy="40" rx="5" ry="9" fill="#1d1c1a"/><path d="M28 60q22 22 44 0" stroke="#1d1c1a" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+
+  <!-- scattered cut-outs: chai, laptop, Orlando palm, stumps -->
+  <svg class="plane cut" viewBox="0 0 720 240" aria-hidden="true">
+    <!-- chai cup -->
+    <g transform="rotate(-8 90 150)">
+      <path d="M80 70 q-8 -12 0 -24 q8 -12 0 -24" stroke="#1d1c1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M104 70 q-8 -12 0 -24 q8 -12 0 -24" stroke="#1d1c1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M50 90 h90 l-10 80 q-2 12 -14 12 h-42 q-12 0 -14 -12 z" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+      <ellipse cx="95" cy="90" rx="45" ry="7" fill="#c8843a" stroke="#1d1c1a" stroke-width="2"/>
+      <path d="M138 108 q26 0 22 26 q-4 20 -28 18" stroke="#1d1c1a" stroke-width="6" fill="none"/>
+      <ellipse cx="95" cy="190" rx="70" ry="10" fill="url(#dotsLight)" stroke="#1d1c1a" stroke-width="2"/>
+    </g>
+    <!-- laptop -->
+    <g transform="rotate(6 300 130)">
+      <rect x="230" y="60" width="150" height="100" rx="8" fill="#1d1c1a"/>
+      <rect x="240" y="70" width="130" height="80" fill="url(#dotsLight)"/>
+      <text x="305" y="122" text-anchor="middle" font-family="Special Elite, Courier New, monospace" font-size="34" fill="#c9a23f" stroke="#1d1c1a" stroke-width=".6">&lt;/&gt;</text>
+      <path d="M210 160 h190 l-14 18 h-162 z" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+    </g>
+    <!-- palm tree for Orlando -->
+    <g transform="rotate(-4 470 140)">
+      <path d="M470 70 q-10 80 4 160 h18 q-16 -80 -6 -160 z" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+      <g fill="url(#dotsLight)" stroke="#1d1c1a" stroke-width="2">
+        <path d="M478 70 q-50 -40 -90 -10 q40 -4 90 10z"/>
+        <path d="M478 70 q-30 -60 -80 -50 q50 10 80 50z"/>
+        <path d="M478 70 q30 -60 82 -46 q-50 6 -82 46z"/>
+        <path d="M478 70 q50 -30 92 6 q-46 -16 -92 -6z"/>
+      </g>
+      <circle cx="472" cy="76" r="7" fill="#1d1c1a"/><circle cx="486" cy="78" r="7" fill="#1d1c1a"/>
+    </g>
+    <!-- cricket stumps -->
+    <g transform="rotate(5 630 150)">
+      <rect x="598" y="80" width="12" height="140" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+      <rect x="624" y="80" width="12" height="140" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+      <rect x="650" y="80" width="12" height="140" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+      <rect x="600" y="72" width="30" height="7" rx="3" fill="#c9a23f" stroke="#1d1c1a" stroke-width="1.5"/>
+      <rect x="632" y="66" width="30" height="7" rx="3" fill="#c9a23f" stroke="#1d1c1a" stroke-width="1.5" transform="rotate(-14 647 70)"/>
+      <circle cx="690" cy="200" r="14" fill="#a8262c"/>
+    </g>
+  </svg>
+
+  <svg class="megaphone cut" viewBox="0 0 120 200" aria-hidden="true">
+    <path d="M20 40 L90 10 L90 90 L20 62 Z" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+    <rect x="6" y="40" width="16" height="22" fill="#1d1c1a"/>
+    <path d="M50 70 L62 190 L82 190 L72 80 Z" fill="url(#dotsLight)" stroke="#1d1c1a" stroke-width="2"/>
+  </svg>
+
+  <div class="note">
+    <img class="me-sticker" src="assets/me-selfie.jpg" alt="Harmanat in a pink turban">
+    <div class="hand">This is me!</div>
+    <p>Harmanat Singh. Sardar, weekend cricketer and maker of things on the internet.</p>
+    <a class="btn" href="#about">MEET HARMANAT</a>
   </div>
+
+  <div class="hero-sub">
+    <div class="hand">Want the quick tour?</div>
+    <p>Scroll for the story, the side projects and the cricket.<br>The serious stuff lives on my work page.</p>
+  </div>
+  <svg class="star hero-star" style="right:38%;bottom:60px;width:30px;height:30px" viewBox="0 0 100 100" aria-hidden="true"><use href="#starShape"/></svg>
+</header>
+
+<svg class="torn" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 L30 32 L55 44 L90 28 L120 38 L160 22 L190 36 L230 26 L260 40 L300 30 L340 42 L370 24 L410 36 L450 28 L480 44 L520 30 L560 38 L600 20 L640 34 L670 26 L710 42 L750 30 L790 38 L820 24 L860 36 L900 28 L940 42 L970 30 L1010 36 L1050 22 L1090 38 L1130 30 L1170 42 L1200 32 L1200 60 L0 60 Z" fill="var(--paper-2)"/></svg>
+
+<main class="sheet">
+  <section class="wrap about" id="about">
+    <div>
+      <div class="hand" style="font-size:1.3rem">the short version</div>
+      <h2>Hi, I'm Harmanat.</h2>
+      <p>I live in Orlando with my wife. By day I connect big systems so they talk to each other nicely. By night and weekends I build little apps and websites for the people I love, keep our family tree growing, and play T20 cricket whenever I can.</p>
+      <p>Turban on, bat ready, tea optional.</p>
+    </div>
+    <figure class="polaroid" style="margin:0">
+      <span class="tape"></span>
+      <img class="ph" src="assets/me-alps.jpg" alt="Harmanat in the Alps near Mont Blanc">
+      <figcaption class="cap">7 km from Mont Blanc</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap wander">
+    <div class="hand lead" style="font-size:1.3rem">I like to wander a bit</div>
+    <figure>
+      <img src="assets/me-monkey-forest.jpg" alt="Harmanat at the Monkey Forest in Ubud, Bali">
+      <figcaption class="tag">Monkey Forest, Ubud</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap made" id="projects">
+    <svg class="star" style="left:50%;top:0;transform:translateX(70px)" viewBox="0 0 100 100" aria-hidden="true"><use href="#starShape"/></svg>
+    <div class="hand">Things I've made</div>
+    <div class="items">
+      <div class="item">
+        <svg class="cut" viewBox="0 0 160 170" aria-hidden="true">
+          <rect x="70" y="95" width="20" height="70" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+          <circle cx="80" cy="62" r="52" fill="url(#dotsLight)" stroke="#1d1c1a" stroke-width="2"/>
+          <circle cx="58" cy="50" r="7" fill="#c9a23f"/><circle cx="96" cy="38" r="7" fill="#c9a23f"/><circle cx="104" cy="78" r="7" fill="#c9a23f"/><circle cx="66" cy="84" r="7" fill="#c9a23f"/>
+        </svg>
+        <h3>THE FAMILY TREE OF SUBEDAR MAJOR AMAR SINGH</h3>
+        <a class="btn" href="/sm-amarsingh">VISIT THE TREE</a>
+      </div>
+      <div class="item">
+        <svg class="cut" viewBox="0 0 120 170" aria-hidden="true">
+          <rect x="18" y="6" width="84" height="158" rx="14" fill="#1d1c1a"/>
+          <rect x="26" y="20" width="68" height="128" rx="4" fill="url(#dotsLight)"/>
+          <rect x="36" y="34" width="20" height="20" rx="5" fill="#e0841c"/><rect x="64" y="34" width="20" height="20" rx="5" fill="#c9a23f"/>
+          <rect x="36" y="62" width="20" height="20" rx="5" fill="#a8262c"/><rect x="64" y="62" width="20" height="20" rx="5" fill="#1d1c1a"/>
+        </svg>
+        <h3>THE LITTLE APPS I BUILD FOR EVERYDAY THINGS</h3>
+        <a class="btn" href="#apps">SEE THE APPS</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap weekend">
+    <div class="scrap grey" id="cricket">
+      <div class="hand">on weekends</div>
+      <svg class="cut" viewBox="0 0 200 160" aria-hidden="true">
+        <g transform="rotate(-35 100 80)">
+          <rect x="94" y="0" width="12" height="46" rx="4" fill="#1d1c1a"/>
+          <path d="M84 44 h32 v104 q0 10 -16 10 q-16 0 -16 -10z" fill="url(#dotsLight)" stroke="#1d1c1a" stroke-width="2"/>
+        </g>
+        <circle cx="160" cy="118" r="20" fill="#a8262c"/>
+        <path d="M146 104 q14 14 28 28" stroke="#fff" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+      </svg>
+      <h3>Grey Bulls</h3>
+      <p>My cricket team. Stats, photos and the odd heroic innings.</p>
+      <a class="btn" href="https://greybulls.com">MEET THE TEAM</a>
+    </div>
+    <div class="scrap white" id="work">
+      <div class="hand">the serious version</div>
+      <svg class="cut" viewBox="0 0 200 160" aria-hidden="true">
+        <rect x="40" y="50" width="120" height="96" rx="8" fill="url(#dots)" stroke="#1d1c1a" stroke-width="2"/>
+        <path d="M78 50 v-16 q0 -8 8 -8 h28 q8 0 8 8 v16" fill="none" stroke="#1d1c1a" stroke-width="6"/>
+        <rect x="40" y="88" width="120" height="8" fill="#1d1c1a"/>
+        <rect x="92" y="84" width="16" height="16" rx="2" fill="#c9a23f"/>
+      </svg>
+      <h3>Work</h3>
+      <p>What I do from nine to five, with my experience and how to reach me.</p>
+      <a class="btn" href="/work">SEE MY WORK PROFILE</a>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <svg class="star" style="left:20px;top:0;width:34px;height:34px" viewBox="0 0 100 100" aria-hidden="true"><use href="#starShape"/></svg>
+    <h2>Say hi.</h2>
+    <div class="links">
+      <a class="btn" href="mailto:hello@harmanat.com">EMAIL</a>
+    </div>
+    <div class="credit">Created by Mannat</div>
+  </footer>
 </main>
-<p class="credit">Created by <b>Mannat</b></p>
+
 </body>
 </html>
